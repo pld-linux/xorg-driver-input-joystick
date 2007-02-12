@@ -1,5 +1,5 @@
 Summary:	X.org input driver for joysticks
-Summary(pl.UTF-8):   Sterownik wejściowy X.org dla joysticków
+Summary(pl.UTF-8):	Sterownik wejściowy X.org dla joysticków
 Name:		xorg-driver-input-joystick
 Version:	1.1.0
 Release:	0.1
