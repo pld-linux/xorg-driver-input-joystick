@@ -1,12 +1,12 @@
 Summary:	X.org input driver for joysticks
 Summary(pl.UTF-8):	Sterownik wejściowy X.org dla joysticków
 Name:		xorg-driver-input-joystick
-Version:	1.2.1
+Version:	1.2.2
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-joystick-%{version}.tar.bz2
-# Source0-md5:	0d3c4649305de37023df0e668b522cd8
+# Source0-md5:	c12f60c72e4ae42bb27857be3904b945
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
