@@ -1,5 +1,3 @@
-# TODO:
-# - devel subpackage
 Summary:	X.org input driver for joysticks
 Summary(pl.UTF-8):	Sterownik wejściowy X.org dla joysticków
 Name:		xorg-driver-input-joystick
@@ -28,6 +26,20 @@ X.org input driver for joysticks.
 
 %description -l pl.UTF-8
 Sterownik wejściowy X.org dla joysticków.
+
+%package devel
+Summary:	X.org joystick input driver - properties definition
+Summary(pl.UTF-8):	Sterownik wejściowy X.org dla joysticków - definicje właściwości
+Group:		Development/Libraries
+# for dir
+Requires:	xorg-xserver-server-devel
+# doesn't require base
+
+%description devel
+X.org joystick input driver - properties definition.
+
+%description devel -l pl.UTF-8
+Sterownik wejściowy X.org dla joysticków - definicje właściwości.
 
 %prep
 %setup -q -n xf86-input-joystick-%{version}
@@ -59,3 +71,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/xorg/modules/input/joystick_drv.so
 %{_mandir}/man4/joystick.4*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/xorg/joystick-properties.h
+%{_pkgconfigdir}/xorg-joystick.pc
