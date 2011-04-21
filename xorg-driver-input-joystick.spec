@@ -1,24 +1,24 @@
 Summary:	X.org input driver for joysticks
 Summary(pl.UTF-8):	Sterownik wejściowy X.org dla joysticków
 Name:		xorg-driver-input-joystick
-Version:	1.5.0
-Release:	3
+Version:	1.6.0
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-joystick-%{version}.tar.bz2
-# Source0-md5:	79b20f86d1b2e625ae65e35c3457027f
+# Source0-md5:	19b55812b018a63e597d579d4cec9cdb
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-proto-inputproto-devel
-BuildRequires:	xorg-proto-randrproto-devel
-BuildRequires:	xorg-util-util-macros >= 1.2
-BuildRequires:	xorg-xserver-server-devel >= 1.3.99.901
+BuildRequires:	xorg-proto-kbproto-devel
+BuildRequires:	xorg-util-util-macros >= 1.8
+BuildRequires:	xorg-xserver-server-devel >= 1.9.99.2
 BuildRequires:	rpmbuild(macros) >= 1.389
 %{?requires_xorg_xserver_xinput}
-Requires:	xorg-xserver-server >= 1.3.99.901
+Requires:	xorg-xserver-server >= 1.9.99.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
